@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Quest - Typing Speed Test</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main-content">
+        <header>
+            <div class="logo">
+                <h1>Typing Quest</h1>
+                <div class="logo-dots">
+                    <span class="dot dot-1"></span>
+                    <span class="dot dot-2"></span>
+                    <span class="dot dot-3"></span>
+                </div>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+        </header>
+
+        <!-- Start Screen -->
+        <div class="screen start-screen active" id="startScreen">
+            <div class="screen-header">
+                <h2>Start Typing Test</h2>
+                <p>Test your typing speed and accuracy</p>
+            </div>
+            
+            <div class="options">
+                <div class="option-group">
+                    <h3>Difficulty</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="difficulty" value="easy" checked>
+                            <span class="radio-label">Easy (short)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="difficulty" value="medium">
+                            <span class="radio-label">Medium</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="difficulty" value="hard">
+                            <span class="radio-label">Hard (long)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Time Mode</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="timeMode" value="30">
+                            <span class="radio-label">30 seconds</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="timeMode" value="60" checked>
+                            <span class="radio-label">1 minute</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="timeMode" value="120">
+                            <span class="radio-label">2 minutes</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="timeMode" value="0">
+                            <span class="radio-label">Infinite</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Options</h3>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="strictMode">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Strict Mode (no errors allowed)</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="btn start-btn" id="startBtn">
+                <span>Start Test</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="tips">
+                <h3>Tips to Improve</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">📝</div>
+                        <p>Practice regularly - consistency is key</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🧘</div>
+                        <p>Maintain good posture</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">👆</div>
+                        <p>Keep fingers curved</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <p>Focus on accuracy first</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Screen -->
+        <div class="screen test-screen" id="testScreen">
+            <div class="test-header">
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value" id="wpmStat">0</div>
+                        <div class="stat-label">WPM</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="accuracyStat">100%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="timeStat">1:00</div>
+                        <div class="stat-label">Time</div>
+                    </div>
+                </div>
+                <button class="btn pause-btn" id="pauseBtn">
+                    <span class="pause-icon">❚❚</span>
+                    <span class="resume-icon">▶</span>
+                </button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="typing-text-container">
+                <div class="typing-text" id="typingText">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading text...</p>
+                    </div>
+                </div>
+            </div>
+
+            <textarea class="typing-input" id="typingInput" placeholder="Start typing here..." autofocus></textarea>
+
+            <div class="test-controls">
+                <button class="btn secondary-btn" id="restartBtn">Restart</button>
+                <button class="btn secondary-btn" id="endBtn">End Test</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="screen results-screen" id="resultsScreen">
+            <div class="screen-header">
+                <h2>Test Results</h2>
+                <p>Your typing performance</p>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-stat">
+                    <div class="result-stat-value" id="resultWpm">0</div>
+                    <div class="result-stat-label">Words Per Minute</div>
+                </div>
+                <div class="result-stat">
+                    <div class="result-stat-value" id="resultAccuracy">100%</div>
+                    <div class="result-stat-label">Accuracy</div>
+                </div>
+                <div class="result-stat">
+                    <div class="result-stat-value" id="resultTime">0s</div>
+                    <div class="result-stat-label">Time</div>
+                </div>
+                <div class="result-stat">
+                    <div class="result-stat-value" id="resultKeystrokes">0</div>
+                    <div class="result-stat-label">Keystrokes</div>
+                </div>
+            </div>
+
+            <div class="result-summary">
+                <p>You typed at <span class="highlight" id="wpmCategory">beginner</span> level with <span class="highlight" id="accuracyCategory">perfect</span> accuracy!</p>
+            </div>
+
+            <div class="result-actions">
+                <button class="btn" id="retryBtn">Retry</button>
+                <button class="btn secondary-btn" id="newTestBtn">New Test</button>
+                <button class="btn share-btn" id="shareBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.58984 13.5098L15.4198 17.4898" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15.4098 6.50977L8.58984 10.4898" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Share
+                </button>
+            </div>
+
+            <div class="history">
+                <h3>Your History</h3>
+                <div class="history-scroll">
+                    <ul class="history-list" id="historyList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="confettiContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="quotes.js"></script>
+</body>
+</html>
