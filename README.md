@@ -68,4 +68,4 @@ Contributions are welcome! Please:
 
 ## 📜 License  
 
-MIT © Sagar Budhwani
+MIT © Sagar Budhwani [LICENSE](LICENSE).
