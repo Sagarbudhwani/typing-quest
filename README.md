@@ -1,71 +1,16 @@
-# Typing Quest ⌨️
+# React + Vite
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-![Made with JavaScript](https://img.shields.io/badge/JavaScript-100%25-yellow)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A minimalist typing speed test that helps you measure and improve your keyboard skills.
+Currently, two official plugins are available:
 
-## 🌐 Live Demo
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-<div align="center">
-  <a href="https://typing-quest.netlify.app/">
-    <img src="assets/screenshot.png" alt="Typing Quest Preview" width="600">
-  </a>
-  <br>
-  <a href="https://typing-quest.netlify.app/">
-    <img src="https://img.shields.io/badge/Test_Your_Speed-Live_Demo-4361ee?style=for-the-badge&logo=netlify" alt="Live Demo">
-  </a>
-</div>
+## React Compiler
 
-## ✨ Features  
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- *Real-time metrics*: WPM and accuracy tracking
-- *3 difficulty levels*: Easy, Medium, Hard
-- *Multiple time modes*: 30s, 1min, 2min, or untimed
-- *Dark/Light theme*: Automatic system preference detection
-- *Progress tracking*: Saves last 5 test results
-- *Strict mode*: Prevents typing errors when enabled
+## Expanding the ESLint configuration
 
-## 🚀 Installation 
-
-1. Clone the repository:
-```bash
-git clone https://github.com/sagarbudhwani/typing-quest.git
-```
-
-2. Open index.html in your browser
-
-## 📂 Project Structure 
-
-
-```bash
-typing-quest/
-├── index.html          # Main application
-├── style.css           # All styling
-├── script.js           # Core functionality
-├── quotes.js           # Text samples database
-├── assets/             # Media files
-│   └── screenshot.png     # Screenshot
-└── README.md           # This file
-```
-
-## 🎯 How It Works  
-
-1. Select your preferred difficulty and time limit
-2. Type the displayed text as quickly and accurately as possible
-3. View your results (WPM, accuracy, and performance category)
-4. Track your progress in the history section
-
-## 🤝 Contributing  
-
-Contributions are welcome! Please:
-
-1. Fork the project
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
-
-## 📜 License  
-
-MIT © Sagar Budhwani [LICENSE](LICENSE).
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
