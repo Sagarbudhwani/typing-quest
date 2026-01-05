@@ -1,16 +1,71 @@
-# React + Vite
+# Typing Quest ⌨️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
-Currently, two official plugins are available:
+A modern, minimalist typing speed trainer designed to help you master the keyboard. Built for speed, aesthetics, and focus.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## React Compiler
+<div align="center">
+  <a href="https://typing-quest.netlify.app/">
+    <img src="assets/screenshot.png" alt="Typing Quest Preview" width="600">
+  </a>
+  <br>
+  <a href="https://typing-quest.netlify.app/">
+    <img src="https://img.shields.io/badge/Test_Your_Speed-Live_Demo-4361ee?style=for-the-badge&logo=netlify" alt="Live Demo">
+  </a>
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Modern Engine**: Built with React & Vite for zero-latency typing.
+- **Dynamic Themes**: Beautiful Dark/Light modes with animated "Aurora" backgrounds.
+- **Flexible Modes**: Race against the clock (15s, 30s, 60s) or relax in infinite Zen Mode.
+- **Smart Difficulty**: Choose between Easy, Medium, or Hard text complexity.
+- **Mobile Ready**: Fully optimized typing experience for phones and tablets.
+- **Real-time Stats**: Instant feedback on WPM and Accuracy as you type.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/sagarbudhwani/typing-quest.git](https://github.com/sagarbudhwani/typing-quest.git)
+   cd typing-quest
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the dev server:**
+   ```bash
+   npm run dev
+   ```
+## 📂 Project Structure
+
+```bash
+typing-quest/
+├── src/
+│   ├── components/     # UI Components (Layouts, Toggles)
+│   ├── hooks/          # Game logic & Theme hooks
+│   ├── pages/          # Home, Game, and Results screens
+│   └── assets/         # Images and icons
+├── public/             # Static assets & redirects
+├── index.html          # Entry point
+└── tailwind.config.js  # Styling configuration
+```
+
+## 🛠 Tech Stack
+
+- **Frontend**: React.js
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+
+## 📜 License
+
+MIT © [Sagar Budhwani](https://github.com/sagarbudhwani)
